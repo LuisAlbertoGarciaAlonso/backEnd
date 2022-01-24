@@ -19,10 +19,10 @@ class Usuario {
     console.log(`Tengo ${this.mascotas.length} mascotas`);
   }
   addBook(nombre, autor) {
-    this.libros.push(nombre, autor);
+    this.libros.push({nombre:nombre, autor:autor});
   }
   getBookNames() {
-    console.log(`Mi Lista de Libros ${usuario1.libros}`);
+    console.log(`Mi Lista de Libros ${usuario1.libros[0].nombre} , ${usuario1.libros[1].nombre} y ${usuario1.libros[2].nombre}.`);
   }
 }
 
