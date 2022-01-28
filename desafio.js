@@ -2,34 +2,34 @@ class Usuario {
   constructor(nombre, apellido) {
     this.nombre = nombre;
     this.apellido = apellido;
-    this.libros = [
-      { nombre: "El señor de las moscas", autor: "William Golding" },
-      { nombre: "Fundacion", autor: "Isaac Asimov" },
-    ];
-    this.mascotas = ["perro", "gato"];
+    this.libros = [];
+    this.mascotas = [];
   }
   getFullName() {
-    console.log(`Mi Nombre es ${this.nombre} ${this.apellido}.`);
+    return(`Mi Nombre es ${this.nombre} ${this.apellido}.`);
   }
   addMascota(mascota) {
-    this.mascotas.push(mascota);
-    console.log(`Mis mascotas son ${this.mascotas}`);
+    this.mascotas.push([mascota]);
+    return `Mis mascotas son: ${this.mascotas}`;
   }
   countMascotas() {
-    console.log(`Tengo ${this.mascotas.length} mascotas`);
+   return `Tengo ${this.mascotas.length} mascotas`;
   }
   addBook(nombre, autor) {
-    this.libros.push({nombre:nombre, autor:autor});
+    this.libros.push({nombre, autor});
   }
   getBookNames() {
-    console.log(`Mi Lista de Libros ${usuario1.libros[0].nombre} , ${usuario1.libros[1].nombre} y ${usuario1.libros[2].nombre}.`);
+    return this.libros.map(libro => libro.nombre)
   }
 }
 
 const usuario1 = new Usuario("Luis", "Garcia");
-usuario1.getFullName();
+console.log(usuario1.getFullName());
 usuario1.addMascota("perico");
-usuario1.countMascotas();
+usuario1.addMascota("perro");
+console.log(usuario1.addMascota());
+ console.log(usuario1.countMascotas());
 usuario1.addBook("El Tunel","sabato");
-usuario1.getBookNames();
-
+usuario1.addBook("El señor de las moscas", "William Golding");
+usuario1.addBook("Fundacion", "Isaac Asimov");
+console.log(usuario1.getBookNames());
